@@ -144,7 +144,7 @@ var value: string | string[] = 'test'
 console.log(value.length) // Works because it exists on both `string` and `Array`.
 
 // Intersection Types.
-function extend <A, B> (a: A, b: B): A & B {
+function extend <A, B extends object> (a: A, b: B): A & B {
   Object.keys(b).forEach(key => {
     (a as any)[key] = (b as any)[key]
   })
